@@ -1,0 +1,16 @@
+Package: FEVV
+Title: FEVV: Functional Enrichment of Genomic Variants and Variations
+Version: 0.99.7
+Description: FEVV is a tool for chromatin state and genomic feature eSNP enrichment. In our approach we fifteen-core chromatin states and 10 genomic features from the biomaRt (Ensembl) and UCSC were used to annotate a list of SNPs in eQTL profiles or genomic intervals. Based on the type of input we follow three strategy for SNP enrichment. (1) eQTL SNPs as input: for eSNP enrichment analysis, first, for each gene/transcript, we selected associated eSNPs as foreground (F) and SNPs within the 1Mb window around the TSS as background (B) SNP sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio). (2) a query SNP as input: first, the 1MB window is defined for the query SNP, and the relevant variants captured from the 1000 genomes data in the European population background. Next, we split the SNPs based upon a LD (R² = 0.8 and MAF = 0.01) to foreground (query SNP and its LD proxies) and background SNPs sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio).
+Depends: R (>= 3.6.3), SNPlocs.Hsapiens.dbSNP144.GRCh38, BSgenome.Hsapiens.UCSC.hg38, motifbreakR, snpStats, data.table, GenomicRanges, biomaRt, GenomicRanges, VariantAnnotation
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1.9001
+biocViews: Software, StatisticalMethod
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+NeedsCompilation: no 
+Authors@R: c(
+    person("Isar", "Nassiri", email="isar.nassiri@oncology.ox.ac.uk", role = c("aut","cre")),
+    person("Benjamin", "Fairfax", role = "aut"))

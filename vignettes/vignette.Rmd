@@ -1,0 +1,65 @@
+---
+title: "FEVV: An R package for Functional Enrichment of Genomic Variants and Variations"
+author: "Isar Nassiri, Benjamin Fairfax"
+date: "Mat 19, 2021"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FEVV is an R package for Functional Enrichment of Genomic Variants and Variations\}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+## 1. Introduction
+
+FEVV is a tool for chromatin state and genomic feature eSNP enrichment. In our approach we fifteen-core chromatin states and 10 genomic features from the biomaRt (Ensembl) and UCSC were used to annotate a list of SNPs in eQTL profiles or genomic intervals. Based on the type of input we follow three strategy for SNP enrichment.
+
+## 2. Input data
+
+Fifteen-core chromatin states for primary monocytes peripheral blood (code: E029) and 10 genomic features from the biomaRt (Ensembl) and UCSC59 were used to annotate a list of SNPs in tQTLs, eQTLs, and mQTLs (p < 0.01, MAF > 0.039). 
+
+biomaRt repository cover 409,304 regulatory features including genomic coordination and associated sequence-motifs of 139729 CTCF binding site, 74575 enhancers, 63152 open chromatin region, 25313 promoters, 87975 promoter flanking region, and 18560 TF binding. UCSC repository provide annotations of 1,619,806 genomic features including 64334 3’UTRs, 114271 5’UTRs, 659198 introns, 289809 exons, and 82890 promoters. We downloaded the annotation databases from the biomaRt central porta (v0.6) (https://www.ensembl.org/biomart/) and TxDb.Hsapiens.UCSC.hg19.knownGene Annotation package. We selected functional genomic features in monocyte cells using ChIP-seq (TF ChIP-seq) profile of K562 cells60. For SNP enrichment analysis, first, for each gene/transcript, we selected tSNPs (FDR < 0.001) as foreground (F) and SNPs within the 1Mb window around the TSS as background (B) SNP sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature (chromatin state) and calculated the z-score (Z) of enrichment 
+
+## 3. Functional Enrichment of eQTL SNPs
+
+For eSNP enrichment analysis, first, for each gene/transcript, we selected associated eSNPs as foreground (F) and SNPs within the 1Mb window around the TSS as background (B) SNP sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio).
+
+## 4. Single query SNP enrichment
+
+First, the 1MB window is defined for the query SNP, and the relevant variants captured from the 1000 genomes data in the European population background. Next, we split the SNPs based upon a LD (R² = 0.8 and MAF = 0.01) to foreground (query SNP and its LD proxies) and background SNPs sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio).
+
+## 5. Outputs
+
+The output of **"SRGnet"** includes the lists of enriched Genomic Features and Chromatin State with query SNP(s), which can be found in home directory of package as text file.
+
+## 6. Example of application
+
+#### eQTL SNPs as input:
+
+data(eQTL)
+
+data(BackendData_GenomicFeatures)
+
+data(BackendData_ChromatinStates)
+
+data(SNPs)
+
+eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000181031', windowSize=1000000, FDRthreshold = 0.001, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
+
+#### a query SNP as the input
+
+data(BackendData_GenomicFeatures)
+
+data(BackendData_ChromatinStates)
+
+Destiny_Folder <- system.file(package = "FEVV")
+
+querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcfMetaData = system.file("extdata", "Genotyping1000_samples_metatadata.txt", package="FEVV"), vcfPATH = 'http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz')
+
+## 7. Reference
+Isar Nassiri, James Gilchrist, Evelyn Lau, Sara Danielli, Hussein Al Mossawi, JaneCheeseman, Matthew Neville, Julian C Knight, Benjamin P Fairfax.Genetic deter-minants of monocyte splicing are enriched for disease susceptibility loci includingfor COVID-19.
+
+Ernst, J. & Kellis, M. ChromHMM: automating chromatin-state discovery and characterization. Nat Methods 9, 215-6 (2012).
+
+Smedley, D. et al. The BioMart community portal: an innovative alternative to large, centralized data repositories. Nucleic Acids Res 43, W589-98 (2015).
+
+
