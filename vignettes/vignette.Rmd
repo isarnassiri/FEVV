@@ -53,7 +53,7 @@ data(BackendData_ChromatinStates)
 
 Destiny_Folder <- system.file(package = "FEVV")
 
-querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcfMetaData = system.file("extdata", "Genotyping1000_samples_metatadata.txt", package="FEVV"), vcfPATH = 'http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz')
+querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcf = paste0(Destiny_Folder, '/data/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz'), vcfMetaData = paste0(Destiny_Folder, '/data/Genotyping1000_samples_metatadata.txt'))
 
 ## 7. Reference
 Isar Nassiri, James Gilchrist, Evelyn Lau, Sara Danielli, Hussein Al Mossawi, JaneCheeseman, Matthew Neville, Julian C Knight, Benjamin P Fairfax.Genetic deter-minants of monocyte splicing are enriched for disease susceptibility loci includingfor COVID-19.
