@@ -52,7 +52,7 @@ eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000168310', windowSize=100
 print( Sys.time() - start )
 
 ############################################################ 
-#  Find the "Interactive QC Report" in the Outputs/ folder #
+#  Find the "RESULTsChromatinState.txt" and "RESULTsGenomicFeatures.txt" files in the ~/FEVV/ folder #
 ############################################################
 
 ```
