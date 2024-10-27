@@ -25,9 +25,12 @@ Based on the type of input we follow two strategy for SNP enrichment:
 
 ```{r,eval=FALSE}
 if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
+if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+if (!requireNamespace("SNPlocs.Hsapiens.dbSNP144.GRCh38", quietly = TRUE)) BiocManager::install("SNPlocs.Hsapiens.dbSNP144.GRCh38")
     
 library(devtools)
 install_github("isarnassiri/FEVV")
+if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 ```
 
 #### Usage
