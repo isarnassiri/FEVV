@@ -1154,7 +1154,7 @@ querySNPsEnrichmentAnalysis <- function(SNP, mafThreshold, windowSize, BackendDa
 
     if(t==1){RESULTsChromatinState = temp}else{RESULTsChromatinState = rbind(RESULTsChromatinState, temp)}
 
-    print(z_score)
+    #print(z_score)
   }
 
   #------------------- genomic features
@@ -1187,7 +1187,7 @@ querySNPsEnrichmentAnalysis <- function(SNP, mafThreshold, windowSize, BackendDa
 
       if(t==1){RESULTsGenomicFeatures = temp}else{RESULTsGenomicFeatures = rbind(RESULTsGenomicFeatures, temp)}
 
-      print(z_score)
+      #print(z_score)
     }
   }
 
