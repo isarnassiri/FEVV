@@ -94,6 +94,7 @@ Fifteen-core chromatin states has been downloaded from https://egg2.wustl.edu/ro
 
 <a name="citation"/>
 
-Citation:
+### Citation:
+
 Isar Nassiri, James Gilchrist, Evelyn Lau, Sara Danielli, Hussein Al Mossawi, Jane Cheeseman, Matthew Neville, Julian C Knight, Benjamin P Fairfax. Genetic deter-minants of monocyte splicing are enriched for disease susceptibility loci includingfor COVID-19.
 
