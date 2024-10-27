@@ -6,6 +6,8 @@
 #'@export
 #'@import GenomicRanges
 #'@import data.table
+#'@import motifbreakR
+#'@import SNPlocs.Hsapiens.dbSNP144.GRCh38
 #'@export
 #'@name eSNPsEnrichmentAnalysis
 #'@title Functional Enrichment of eQTL SNPs
@@ -251,7 +253,7 @@ querySNPsEnrichmentAnalysis <- function(SNP, mafThreshold, windowSize, BackendDa
       }
       return(variants)
     } else {
-      stop("type ", type, " is not yet implemented")
+      stop("type ", type )
     }
   }
 
