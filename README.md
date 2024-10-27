@@ -62,7 +62,7 @@ The 'eQTL' object should have headers that include seqnames, SNP_POS, SNP_POS, S
 
 #### B) Functional Enrichment of a query SNP
 
-The functional enrichment of a query SNP will be carried out automatically according to the following.
+The functional enrichment of a query SNP will be carried out automatically according to the following using `querySNPsEnrichmentAnalysis()` function.
 
 ```{r,eval=FALSE}
 
