@@ -1,4 +1,13 @@
-# Functional Enrichment of Genomic Variants and Variations (FEVV)
+Functional Enrichment of Genomic Variants and Variations (FEVV)
+==========
+* [Introduction](#introduction)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Citation](#citation)
+<a name="introduction"/>
+
+### Introduction
+
 FEVV is a tool for chromatin state and genomic feature eSNP enrichment. In our approach we fifteen-core chromatin states and 10 genomic features from the biomaRt (Ensembl) and UCSC were used to annotate a list of SNPs in eQTL profiles or genomic intervals.
 Based on the type of input we follow two strategy for SNP enrichment:
 
@@ -9,6 +18,7 @@ Based on the type of input we follow two strategy for SNP enrichment:
 <a name="installation"/>
 
 ### Installation
+
 1. Install the R [(LINK)](https://cran.r-project.org/)
 2. Install the free version of rStudio [(LINK)](https://www.rstudio.com/products/rstudio/download/)
 3. Run the following command in rStudio to install scQCEA as an R package:
@@ -20,24 +30,39 @@ library(devtools)
 install_github("isarnassiri/FEVV")
 ```
 
-#'@export
-#'@import GenomicRanges
-#'@import data.table
-#'@export
-#'@name eSNPsEnrichmentAnalysis
-#'@title Functional Enrichment of eQTL SNPs
-#'@description eQTL SNPs as input: for eSNP enrichment analysis, first, for each gene/transcript, we selected associated eSNPs as foreground (F) and SNPs within the 1Mb window around the TSS as background (B) SNP sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio).
-#'@author {Isar Nassiri, Benjamin Fairfax}
-#'@param eQTL
-#'eQTL profile including the following headers: seqnames, SNP_POS, SNP_POS, SNP_ID, gene_id
-#'@param TranscriptName
-#'Gene or isoform Ensembl ID
-#'@param windowSize
-#'window around the TSS (e.g. 1000000)
-#'@param FDRthreshold
-#'FDR threshold (e.g. 0.001)
-#'@param BackendData_GenomicFeatures
-#'fifteen-core chromatin states from https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/coreMarks/jointModel/final/download/
+### Usage
+
+## Functional Enrichment of eQTL SNPs
+
+It is easy to create an interactive QC report for those who possess little or no programming language skills. To run and generate an interactive QC report on your computer please install and call the scQCEA using rStudio, select all scripts incluidng `GenerateInteractiveQCReport()` function, and click on the "Run" button at the top right of the Source tab. An interactive QC report automatically will be generated in one HTML file, including four sections: experimental workflow, data processing workflow, sample information and QC metrics, data analysis and quality control.
+
+```{r,eval=FALSE}
+
+#########################################################################
+# Please execute the code in the RStudio IDE (https://www.rstudio.com/) #
+#########################################################################
+
+library("FEVV")
+InputDir=system.file("extdata", package = "FEVV")
+
+start <- Sys.time()
+eSNPsEnrichmentAnalysis(eQTL, TranscriptName, windowSize, FDRthreshold, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
+print( Sys.time() - start )
+
+############################################################ 
+#  Find the "Interactive QC Report" in the Outputs/ folder #
+############################################################
+
+```
+
+# eQTL SNPs as input:
+
+For eSNP enrichment analysis, first, for each gene/transcript, we selected associated eSNPs as foreground (F) and SNPs within the 1Mb window around the TSS as background (B) SNP sets. We used the number of overlaps of foreground (f) and background (b) SNP sets in the genomic feature or chromatin state and calculate the enrichment score (z-score and odds ratio).
+
+Backend Data Genomic Features
+Fifteen-core chromatin states has been downloaded from https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/coreMarks/jointModel/final/download/ and are available with the package.
+
+
 #'@param BackendData_ChromatinStates
 #'10 genomic features from the biomaRt (Ensembl) and UCSC
 #'@param SNPs
@@ -52,7 +77,7 @@ install_github("isarnassiri/FEVV")
 #'@export
 
 eSNPsEnrichmentAnalysis <- NULL
-eSNPsEnrichmentAnalysis <- function(eQTL, TranscriptName, windowSize, FDRthreshold, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
+eSNPsEnrichmentAnalysis(eQTL, TranscriptName, windowSize, FDRthreshold, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
 {
 
 
