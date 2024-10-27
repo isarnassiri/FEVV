@@ -30,7 +30,6 @@ if (!requireNamespace("SNPlocs.Hsapiens.dbSNP144.GRCh38", quietly = TRUE)) BiocM
     
 library(devtools)
 install_github("isarnassiri/FEVV")
-if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 ```
 
 #### Usage
