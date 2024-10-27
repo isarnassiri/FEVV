@@ -91,25 +91,9 @@ Backend Data Genomic Features
 Fifteen-core chromatin states has been downloaded from https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/coreMarks/jointModel/final/download/ and are available with the package.
 
 
-#'@param BackendData_ChromatinStates
-#'10 genomic features from the biomaRt (Ensembl) and UCSC
-#'@param SNPs
-#'List of all SNPs in human genome
-#'@return You can find the results in R object under title of 'RESULTsGenomicFeatures' and 'RESULTsChromatinState'.
-#'@examples
-#'data(eQTL)
-#'data(BackendData_GenomicFeatures)
-#'data(BackendData_ChromatinStates)
-#'data(SNPs)
-#'eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000168310', windowSize=1000000, FDRthreshold = 0.001, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
-#'@export
 
-eSNPsEnrichmentAnalysis <- NULL
-eSNPsEnrichmentAnalysis(eQTL, TranscriptName, windowSize, FDRthreshold, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
-{
+<a name="citation"/>
 
-
-
-Reference:
+Citation:
 Isar Nassiri, James Gilchrist, Evelyn Lau, Sara Danielli, Hussein Al Mossawi, Jane Cheeseman, Matthew Neville, Julian C Knight, Benjamin P Fairfax. Genetic deter-minants of monocyte splicing are enriched for disease susceptibility loci includingfor COVID-19.
 
