@@ -51,9 +51,9 @@ start <- Sys.time()
 eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000168310', windowSize=1000000, FDRthreshold = 0.001, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
 print( Sys.time() - start )
 
-############################################################ 
+###################################################################################################### 
 #  Find the "RESULTsChromatinState.txt" and "RESULTsGenomicFeatures.txt" files in the ~/FEVV/ folder #
-############################################################
+######################################################################################################
 
 ```
 
