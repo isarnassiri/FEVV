@@ -74,8 +74,7 @@ library("FEVV")
 InputDir=system.file("extdata", package = "FEVV")
 
 start <- Sys.time()
-e = "FEVV")
-#'querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcfMetaData = system.file("extdata", "Genotyping1000_samples_metatadata.txt", package="FEVV"), vcfPATH = 'http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz' )
+querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcfMetaData = system.file("extdata", "Genotyping1000_samples_metatadata.txt", package="FEVV"), vcfPATH = 'http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz' )
 print( Sys.time() - start )
 
 ###################################################################################################### 
