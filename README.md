@@ -52,6 +52,8 @@ start <- Sys.time()
 eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000168310', windowSize=1000000, FDRthreshold = 0.001, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
 print( Sys.time() - start )
 
+Time difference of 0.6 secs
+
 ###################################################################################################### 
 #  Find the "RESULTsChromatinState.txt" and "RESULTsGenomicFeatures.txt" files in the ~/FEVV/ folder #
 ######################################################################################################
@@ -76,6 +78,8 @@ InputDir=system.file("extdata", package = "FEVV")
 start <- Sys.time()
 querySNPsEnrichmentAnalysis(SNP = 'rs13149699', mafThreshold = 0.039, windowSize = 1000000, BackendData_GenomicFeatures, BackendData_ChromatinStates, vcfMetaData = system.file("extdata", "Genotyping1000_samples_metatadata.txt", package="FEVV"), vcfPATH = 'http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr4.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz' )
 print( Sys.time() - start )
+
+Time difference of ~2 mins
 
 ########################################################################################################### 
 #  Find the "RESULTsChromatinState.txt" and "RESULTsGenomicFeatures.txt" files in the ~/FEVV/inst/ folder #
