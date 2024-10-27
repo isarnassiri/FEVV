@@ -34,6 +34,31 @@ install_github("isarnassiri/FEVV")
 
 ##### A) Functional Enrichment of eQTL SNPs
 
+It is easy to run the enrichment analysis for those who possess little or no programming language skills. To run the enrichment analysis on your computer install and call the FEVV using rStudio, select  `eSNPsEnrichmentAnalysis()` function, and click on the "Run" button at the top right of the Source tab. The enrichment analysis automatically will be performed as follows.
+
+```{r,eval=FALSE}
+
+#########################################################################
+# Please execute the code in the RStudio IDE (https://www.rstudio.com/) #
+#########################################################################
+
+library("FEVV")
+InputDir=system.file("extdata", package = "FEVV")
+
+start <- Sys.time()
+eSNPsEnrichmentAnalysis(eQTL, TranscriptName = 'ENSG00000168310', windowSize=1000000, FDRthreshold = 0.001, BackendData_GenomicFeatures, BackendData_ChromatinStates, SNPs)
+print( Sys.time() - start )
+
+###################################################################################################### 
+#  Find the "RESULTsChromatinState.txt" and "RESULTsGenomicFeatures.txt" files in the ~/FEVV/ folder #
+######################################################################################################
+
+```
+
+The 'eQTL' object should have headers that include seqnames, SNP_POS, SNP_POS, SNP_ID, and gene_id for each column. Specifying the transcript name requires the Ensembl ID of the interest transcript. The search space around the transcription start site (TSS) is represented by the window size (e.g. 1000000). The threshold for FDR (FDR) can be described using the term FDR threshold (e.g. 0.001). "BackendData_GenomicFeatures" includes a fifteen-core chromatin states from https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/coreMarks/jointModel/final/download/. 'BackendData_ChromatinStates' includes 10 genomic features from BiomaRt (Ensembl) and UCSC. A list of all SNPs in the human genome is represented by the 'SNPs' parameter.
+
+##### B) eQTL SNPs as input
+
 It is easy to run the enrichment analysis for those who possess little or no programming language skills. To run the enrichment analysis on your computer install and call the FEVV using rStudio, select  `eSNPsEnrichmentAnalysis()` function, and click on the "Run" button at the top right of the Source tab. The enrichment analysis automatically will be performed, including .
 
 ```{r,eval=FALSE}
