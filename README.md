@@ -30,9 +30,9 @@ library(devtools)
 install_github("isarnassiri/FEVV")
 ```
 
-### Usage
+#### Usage
 
-## Functional Enrichment of eQTL SNPs
+##### Functional Enrichment of eQTL SNPs
 
 It is easy to create an interactive QC report for those who possess little or no programming language skills. To run and generate an interactive QC report on your computer please install and call the scQCEA using rStudio, select all scripts incluidng `GenerateInteractiveQCReport()` function, and click on the "Run" button at the top right of the Source tab. An interactive QC report automatically will be generated in one HTML file, including four sections: experimental workflow, data processing workflow, sample information and QC metrics, data analysis and quality control.
 
