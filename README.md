@@ -4,6 +4,7 @@ Functional Enrichment of Genomic Variants and Variations (FEVV)
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Citation](#citation)
+
 <a name="introduction"/>
 
 ### Introduction
@@ -29,6 +30,8 @@ if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
 library(devtools)
 install_github("isarnassiri/FEVV")
 ```
+
+<a name="usage"/>
 
 ### Usage
 
