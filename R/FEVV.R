@@ -206,7 +206,7 @@ eSNPsEnrichmentAnalysis <- function(eQTL, TranscriptName, windowSize, FDRthresho
 #'@param mafThreshold
 #'minor allele frequency (MAF) threshold
 #'@param vcfMetaData
-#'meta data of 1000 Genomes project (phase3) including 'sample',	'pop',	'super_pop', and 'gender' header
+#'meta data of 1000 Genomes project (phase3) including 'sample', 'pop', 'super_pop', and 'gender' as a header.
 #'@param vcfPATH
 #'Pathe to the vcf file.
 #'@return You can find the results in R object under title of 'RESULTsGenomicFeatures' and 'RESULTsChromatinState'.
