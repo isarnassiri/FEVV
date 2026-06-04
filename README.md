@@ -92,5 +92,5 @@ Specifying the SNP ID (SNP) requires the rs-ID of the interest SNP. The search s
 
 ### Citation:
 
-Isar Nassiri, James Gilchrist, Evelyn Lau, Sara Danielli, Hussein Al Mossawi, Jane Cheeseman, Matthew Neville, Julian C Knight, Benjamin P Fairfax. Genetic deter-minants of monocyte splicing are enriched for disease susceptibility loci includingfor COVID-19.
+Nassiri I, Gilchrist J, Tong O, Lau E, Danielli S, Al Mossawi H, Neville M, Knight J, Fairfax B. Genetic determinants of monocyte splicing are enriched for disease susceptibility loci. Nature Communications, (2025), 16:8616.
 
